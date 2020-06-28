@@ -2,31 +2,35 @@
 
 class Database{
 
-    private $connexion;
+    private $host;
+    private $db;
+    private $user;
+    private $password;
+    private $charset;
 
-    public function __construct($servername, $username, $password, $dbname){
-        $this->connexion  = mysqli_connect($servername, $username, $password, $dbname)
-        or die("Connection failed: " . mysqli_connect_error());
+    public function __construct(){
+        $this->host = 'localhost';
+        $this->db = 'tpfinal';
+        $this->user = 'root';
+        $this->password = '';
+        $this->charset = 'utf8mb4';
     }
 
-    public function query($sql){
-        $result = mysqli_query($this->connexion, $sql);
+    function connect(){
+        try{
+            $connection = "mysql:host=" . $this->host . ";dbname=" . $this->db . ";charset=" . $this->charset;
+            $options = [
+                PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+                PDO::ATTR_EMULATE_PREPARES   => false,
+            ];
 
-        $resultAsAssocArray = mysqli_fetch_all($result, MYSQLI_ASSOC);
+            $pdo = new PDO($connection, $this->user, $this->password, $options);
 
-        return $resultAsAssocArray;
+            return $pdo;
+        }catch(PDOException $e){
+            print_r('Error connection: ' . $e->getMessage());
+        }
     }
 
-    public function __destruct(){
-        mysqli_close($this->connexion);
-    }
 
-    public static function createDatabaseFromConfig(Config $config){
-        return new Database(
-            $config->get( "database","servername"),
-            $config->get("database","username"),
-            $config->get("database","password"),
-            $config->get("database","dbname")
-        );
-    }
 }
