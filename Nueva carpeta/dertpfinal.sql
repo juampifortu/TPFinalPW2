@@ -17,8 +17,6 @@ id_grupo integer not null,
 primary key(id_usuario),
 foreign key (id_grupo) references grupo(id_grupo));
 
-
-
 create table permiso(
 id_permiso integer,
 descripcion varchar(25),
@@ -77,17 +75,17 @@ foreign key(id_diario) references diario(id_diario),
 foreign key(id_seccion) references seccion(id_seccion));
 
 create table suscripcion(
-id_suscripcion integer,
+id_suscripcion integer auto_increment,
 fecha_inicio date,
 duracion_en_meses integer,
-id_usuario integer,
+id_usuario MEDIUMINT,
 id_diario integer,
 primary key(id_suscripcion),
 foreign key(id_usuario) references usuario(id_usuario),
 foreign key(id_diario) references diario(id_diario));
 
 create table pago(
-id_pago integer,
+id_pago integer auto_increment,
 metodo_pago varchar(20),
 importe integer,
 id_suscripcion integer,
@@ -96,7 +94,7 @@ foreign key(id_suscripcion) references suscripcion(id_suscripcion));
 
 create table compra_unitaria(
 id_compra_unitaria integer,
-id_usuario integer,
+id_usuario MEDIUMINT,
 id_edicion integer,
 id_pago integer,
 primary key(id_compra_unitaria),
@@ -112,12 +110,12 @@ values
 (3,"suscriptor");
 
 insert into usuario
-(id_usuario,nombre,mail,contraseña,id_grupo)
+(nombre,mail,contraseña,id_grupo)
 values
-(1,"ricardo","ricard@gmail.com",1234,1),
-(2,"esteban","esteban@hotmail.com",4321,2),
-(3,"pedro","pedrito123@gmail.com","pedro123",3),
-(4,"martin","martincho@hotmail.com","tincho123",4);
+("ricardo","ricard@gmail.com",1234,1),
+("esteban","esteban@hotmail.com",4321,2),
+("pedro","pedrito123@gmail.com","pedro123",3),
+("martin","martincho@hotmail.com","tincho123",3);
 
 insert into estado
 (id_estado, descripcion)
@@ -139,54 +137,54 @@ values
 ("si",2,2),
 ("no",1,1),
 ("si",3,3),
-("no",4,4);
+("no",2,4);
 
 insert into diario
-(id_diario,nombre)
+(nombre)
 values
-(1,"la nacion"),
-(2,"ole"),
-(3,"clarin");
-
-insert into seccion
-(id_seccion,nombre,id_diario)
-values
-(1,"deportes",2),
-(2,"politica",3),
-(3,"entretenimiento",1);
+("la nacion"),
+("ole"),
+("clarin");
 
 insert into edicion
-(id_edicion,descripcion,id_diario)
+(descripcion,estado,id_diario)
 values
-(1,"hola",1),
-(2,"pepito",2),
-(3,"123",3);
+("hola",1,1),
+("pepito",0,2),
+("123",1,3);
+
+insert into seccion
+(nombre,estado,id_edicion)
+values
+("deportes",0,1),
+("politica",1,2),
+("entretenimiento",1,3);
 
 insert into noticia
-(id_noticia, titulo, cuerpo,estado)
+(titulo, cuerpo,estado)
 values
-(1,"clases virtuales","la UNLaM dicta clases a distancia",0),
-(2,"clasesasdsd","la UNLaM dicta clases a dsdasdsdistancia",0),
-(3,"claasdsdsdsales","la UNLaM sdsddicta clsdsdsses a distancia",1);
+("clases virtuales","la UNLaM dicta clases a distancia",0),
+("clasesasdsd","la UNLaM dicta clases a dsdasdsdistancia",0),
+("claasdsdsdsales","la UNLaM sdsddicta clsdsdsses a distancia",1);
 
 insert into suscripcion
-(id_suscripcion,fecha_inicio,duracion_en_meses,id_usuario,id_diario)
+(fecha_inicio,duracion_en_meses,id_usuario,id_diario)
 values
-(1,"2020-06-10",1,1,1),
-(2,"2020-07-18",3,3,2);
+("2020-06-10",1,1,1),
+("2020-07-18",3,3,2);
 
 insert into pago
-(id_pago,metodo_pago,importe,id_suscripcion)
+(metodo_pago,importe,id_suscripcion)
 values
-(1,"tarjeta de credito",150,1),
-(2,"transferencia",120,2);
+("tarjeta de credito",150,1),
+("transferencia",120,2);
 
 insert into compra_unitaria
 (id_compra_unitaria,id_usuario,id_edicion,id_pago)
 values
 (1,2,1,1),
 (2,3,1,2);
-usuario
+
 
 
 
