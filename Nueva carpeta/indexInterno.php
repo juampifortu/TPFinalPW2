@@ -19,46 +19,23 @@ switch ($page){
         $controller->executeNoticias();
         break;
 
-    case "validarNoticias":
+    case "validarPublicacion":
         include_once("controller/ValidarController.php");
         $controller = new ValidarController();
-        $controller->executenoticias();
+        $controller->execute();
         break;
 
-    case "validarEdiciones":
-        include_once("controller/ValidarController.php");
-        $controller = new ValidarController();
-        $controller->executeediciones();
-        break;
 
-    case "validarSecciones":
-        include_once("controller/ValidarController.php");
-        $controller = new ValidarController();
-        $controller->executesecciones();
-        break;
-
-    case "validarDiarios":
-        include_once("controller/ValidarController.php");
-        $controller = new ValidarController();
-        $controller->executediarios();
-        break;
-
-    case "agregarSeccion":
+    case "agregarPublicacion":
         include_once("controller/AgregarController.php");
         $controller = new AgregarController();
-        $controller->executeSecciones();
+        $controller->executePublicaciones();
         break;
 
-    case "agregarEdicion":
-        include_once("controller/AgregarController.php");
-        $controller = new AgregarController();
-        $controller->executeEdiciones();
-        break;
-
-    case "agregarDiario":
-        include_once("controller/AgregarController.php");
-        $controller = new AgregarController();
-        $controller->executeDiarios();
+    case "abmContenidistas":
+        include_once ("controller/AltaBajaContenidistasController.php");
+        $controller= new AltaBajaContenidistasController();
+        $controller->execute();
         break;
 }
 

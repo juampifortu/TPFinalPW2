@@ -13,23 +13,13 @@ class AgregarController{
         include_once("view/agregarNoticiasView.php");
     }
 
-    public function executeDiarios(){
+    public function executePublicaciones(){
         $modelo= new AgregarModel();
         $diarios = $modelo->obtenerDiariosExistentes();
-        include_once("view/agregarDiarioView.php");
-    }
-
-    public function executeEdiciones(){
-        $modelo= new AgregarModel();
-        $diarios = $modelo->obtenerDiariosExistentes();
-        include_once("view/agregarEdicionView.php");
-    }
-
-    public function executeSecciones(){
-        $modelo= new AgregarModel();
         $ediciones = $modelo->obtenerEdicionesExistentes();
-        include_once("view/agregarSeccionView.php");
+        include_once("view/agregarPublicacionView.php");
     }
+
 
 
 }

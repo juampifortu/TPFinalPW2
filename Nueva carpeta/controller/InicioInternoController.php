@@ -6,6 +6,7 @@ class InicioInternoController
 
     public function __construct()
     {
+        include_once "model/VerModel.php";
     }
 
     public function execute($rol)
@@ -18,6 +19,8 @@ class InicioInternoController
                 include_once("view/inicioInternoViewConten.php");
             break;
             case 3:
+                $modelo= new VerModel();
+                $noticias= $modelo->obtenerNoticias();
                 include_once("view/inicioInternoViewSuscriptor.php");
             break;
         }

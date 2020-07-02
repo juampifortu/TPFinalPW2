@@ -6,23 +6,13 @@
 
 <h3>¿Que puedo hacer actualmente?</h3>
 <br>
-<a href="index.php?page=registrarse">Registrar Contenidista</a>
+<a href="indexInterno.php?page=abmContenidistas">Alta Baja Contenidista</a>
 <br>
 <a href="indexInterno.php?page=agregarNoticias">Agregar Noticias</a>
 <br>
-<a href="indexInterno.php?page=agregarSeccion">Agregar sección</a>
+<a href="indexInterno.php?page=agregarPublicacion">Agregar diario/seccion/edicion</a>
 <br>
-<a href="indexInterno.php?page=agregarEdicion">Agregar edición</a>
-<br>
-<a href="indexInterno.php?page=agregarDiario">Agregar diario</a>
-<br>
-<a href="indexInterno.php?page=validarNoticias">Validar Noticias</a>
-<br>
-<a href="indexInterno.php?page=validarSecciones">Validar Secciones</a>
-<br>
-<a href="indexInterno.php?page=validarEdiciones">Validar Ediciones</a>
-<br>
-<a href="indexInterno.php?page=validarDiarios">Validar Diarios</a>
+<a href="indexInterno.php?page=validarPublicacion">Publicaciones Pendientes</a>
 
 </div>
 </body>

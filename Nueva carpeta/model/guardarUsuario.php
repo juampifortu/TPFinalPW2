@@ -18,11 +18,11 @@ if($rol==1){
     $sqlconsul = "SELECT us.nombre FROM usuario AS us WHERE us.nombre='$nombre';";
 
 
-    if($conexion->query($sqlconsul)){
+    if($conexion->execute($sqlconsul)){
         echo "<p>El usuario ya existe</p>";
         echo "<a href='../indexInterno.php?page=inicioInterno'>volver</a>";
     }else{
-        $conexion->query($sql);
+        $conexion->execute($sql);
 
         if($conexion->query($sqlconsul)){
             echo "<p>Registro exitoso</p>";
@@ -43,7 +43,7 @@ if($rol==1){
         echo "<p>El usuario ya existe</p>";
         echo "<a href='../index.php?page=registrarse'>volver</a>";
     }else{
-        $conexion->query($sql);
+        $conexion->execute($sql);
 
         if($conexion->query($sqlconsul)){
             echo "<p>Registro exitoso</p>";

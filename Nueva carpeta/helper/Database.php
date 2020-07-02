@@ -5,6 +5,7 @@ class Database{
     private $conexion;
 
     public function __construct(){
+        //$configuracion = parse_ini_file("../config/config.ini");
         $configuracion = parse_ini_file("config.ini");
         $servername = $configuracion["servername"];
         $username = $configuracion["username"];
@@ -28,6 +29,12 @@ class Database{
 
         return $resultado;
     }
+
+    public function execute($sql){
+        $result = mysqli_query($this->conexion, $sql) or die (mysqli_error($this->conexion));
+
+        return $result;
+}
 
     public function close(){
         mysqli_close($this->conexion);
