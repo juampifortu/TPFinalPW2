@@ -13,9 +13,13 @@ class InicioInternoController
     {
         switch ($rol){
             case 1:
+                $modelo= new VerModel();
+                $noticias= $modelo->obtenerNoticias();
                 include_once("view/inicioInternoViewAdmin.php");
             break;
             case 2:
+                $modelo= new VerModel();
+                $noticias= $modelo->obtenerNoticias();
                 include_once("view/inicioInternoViewConten.php");
             break;
             case 3:

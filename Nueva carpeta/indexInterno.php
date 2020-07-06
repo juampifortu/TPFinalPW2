@@ -3,6 +3,7 @@ include_once("view/partial/headerInterno.php");
 session_start();
 
 $rol=$_SESSION['rol'];
+$id=isset($_GET['id'])?$_GET['id']:null;
 
 $page = isset($_GET[ "page" ]) ? $_GET[ "page" ] : "inicioInterno";
 
@@ -37,6 +38,14 @@ switch ($page){
         $controller= new AltaBajaContenidistasController();
         $controller->execute();
         break;
+
+    case "noticia":
+        include_once ("controller/NoticiaController.php");
+        $controller= new NoticiaController();
+        $controller->execute($id);
+        break;
+
+
 }
 
 //include_once("view/partial/footer.php");

@@ -11,7 +11,7 @@ $usuario= $_POST['usuario'];
 $clave = $_POST['clave'];
 $clave = md5($clave);
 
-$sql = "SELECT * FROM usuario WHERE nombre='$usuario' AND contraseña='$clave';";
+$sql = "SELECT * FROM usuario WHERE nombre='$usuario' AND contrasena='$clave';";
 $resul = $conexion->query($sql);
 
 $arrayusuario = $resul[0];
@@ -28,5 +28,5 @@ if(sizeof($resul) > 0){
 }else{
    
     echo "<p>login incorrecto</p>";
-    echo "<a href='../index.php?page=iniciarSesion'>Reintentar</a>";
+    echo "<a href='../index?page=iniciarSesion'>Reintentar</a>";
 }

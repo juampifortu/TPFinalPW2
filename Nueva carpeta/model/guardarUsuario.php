@@ -14,7 +14,7 @@ $mail = $_POST['mail'];
 $password = md5($_POST['clave']);
 
 if($rol==1){
-    $sql = "INSERT INTO usuario(nombre, mail, contraseña, id_grupo) VALUES ('$nombre', '$mail', '$password', 2);";
+    $sql = "INSERT INTO usuario(nombre, mail, contrasena, id_grupo) VALUES ('$nombre', '$mail', '$password', 2);";
     $sqlconsul = "SELECT us.nombre FROM usuario AS us WHERE us.nombre='$nombre';";
 
 
@@ -35,7 +35,7 @@ if($rol==1){
         $conexion->close();
     }
 }else{
-    $sql = "INSERT INTO usuario(nombre, mail, contraseña, id_grupo) VALUES ('$nombre', '$mail', '$password', 3);";
+    $sql = "INSERT INTO usuario(nombre, mail, contrasena, id_grupo) VALUES ('$nombre', '$mail', '$password', 3);";
     $sqlconsul = "SELECT us.nombre FROM usuario AS us WHERE us.nombre='$nombre';";
 
 

@@ -1,38 +1,31 @@
 
 
 <html>
-<head></head>
+<head>
+
+</head>
 <body>
-<div align="center">
-<h2>Bienvenido Suscriptor</h2>
 
+<div class="w3-container w3-content w3-center w3-padding-64" >
+    <h2 class="w3-wide">Bienvenido Suscriptor</h2>
 
-    
-<h3>¿Que puedo hacer actualmente?</h3>
-<br>
-    <h2 class="w3-wide">Noticias</h2>
-    <table class="w3-table">
-        <tr>
-            <th>id</th>
-            <th>Título</th>
-            <th>Contenido</th>
-            <th>Imagen</th>
-        </tr>
+    <h3 class="w3-wide">Noticias Recientes</h3>
 
-        <?php
-        foreach ($noticias as $noticia) {
-            echo "<tr>
-                      <td>" . $noticia['id_noticia'] . "</td>
-                      <td>" . $noticia['titulo'] . "</td>
-                      <td>" . $noticia['cuerpo'] . "</td>
-                 </tr>";
-            echo '<img src="'.$noticia['url_imagen'].'" width=200 " >';
-        }
-
-
-
-        ?>
-    </table>
+    <div class=\"w3-row-padding w3-auto\">
+    <?php
+    foreach ($noticias as $noticia){
+        $id=$noticia['id_noticia'];
+        echo "
+        <a href='indexInterno.php?page=noticia&id=$id'>
+        <div class='w3-third'>
+            <p>" . strtoupper($noticia['titulo']) . "</p>"
+            . "<img src=" .$noticia['url_imagen'] ." width=200 height=120 >".
+            "</div>  
+        </a>
+        ";
+    }
+    ?>
+    </div>
 </div>
 </body>
 </html>

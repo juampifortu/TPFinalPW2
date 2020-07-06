@@ -17,13 +17,11 @@
             echo "<tr>
                       <td>" . $usuario['nombre'] . "</td>
                       <td>" . $usuario['nombre_grupo'] . "</td>
-                      <td><a href='../model/altabaja.php?id=$id&grupo=$id_grupo&el=0'>Cambiar</a></td>
-                      <td><a href='../model/altabaja.php?id=$id&grupo=$id_grupo&el=1'>Eliminar</a></td>
+                      <td><a href='../model/altabaja?id=$id&grupo=$id_grupo&el=0'>Cambiar</a></td>
+                      <td><a href='../model/altabaja?id=$id&grupo=$id_grupo&el=1'>Eliminar</a></td>
                       
                  </tr>";
         }
-       // $id=$usuario['id_usuario'];
-      //  echo "<a href='../model/altabaja.php?id=$id'>Alta/Baja</a>";
         ?>
     </table>
 </div>

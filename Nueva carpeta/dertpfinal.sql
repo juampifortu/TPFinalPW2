@@ -12,7 +12,7 @@ create table usuario(
 id_usuario MEDIUMINT NOT NULL AUTO_INCREMENT,
 nombre varchar(20) not null,
 mail varchar(50) not null,
-contraseña varchar(50) not null,
+contrasena varchar(50) not null,
 id_grupo integer not null,
 primary key(id_usuario),
 foreign key (id_grupo) references grupo(id_grupo));
@@ -145,9 +145,29 @@ values
 
 /*la contraseña del admin es 123456*/
 insert into usuario
-(nombre, mail, contraseña, id_grupo)
+(nombre, mail, contrasena, id_grupo)
 values
 ("igna", "ignaa88@gmail.com", "e10adc3949ba59abbe56e057f20f883e", 1);
 
+insert into diario
+(id_tipo,nombre, estado)
+values
+(1,"la nacion",1),
+(1,"ole",1),
+(1,"clarin",1);
 
+insert into edicion
+(id_tipo, descripcion, estado, id_diario)
+values
+(2,"edicion1",1,1),
+(2,"edicion2",1,2),
+(2,"edicion3",1,2),
+(2,"edicion4",1,3);
 
+insert into seccion
+(id_tipo, nombre, estado, id_edicion)
+values
+(3,"politica",1,1),
+(3,"deportes",1,2),
+(3,"economia",1,4),
+(3,"deportes",1,3);

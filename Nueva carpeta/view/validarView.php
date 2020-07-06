@@ -134,8 +134,9 @@
                       <td>" . $noticia['id_noticia'] . "</td>
                       <td>" . $noticia['titulo'] . "</td>
                       <td>" . $noticia['cuerpo'] . "</td>
-                      <td><a href='../model/aprobarPublicacion.php?id=$id&tipo=4'>Aprobar</a></td>
-                      <td><a href='../model/aprobarPublicacion.php?id=$id&tipo=1&el=1'>Eliminar</a></td>     
+                      <td><img src=" .$noticia['url_imagen'] ." width=200 height=120 ></td>
+                      <td><a href='../model/aprobarPublicacion?id=$id&tipo=4'>Aprobar</a></td>
+                      <td><a href='../model/aprobarPublicacion?id=$id&tipo=1&el=1'>Eliminar</a></td>     
                  </tr>";
         }
         ?>
