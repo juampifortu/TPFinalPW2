@@ -88,7 +88,7 @@
     <br>
     <h2>Agregar Noticia</h2>
 
-    <form action="../model/guardarpublicacion.php" method="POST" enctype="multipart/form-data">
+    <form action="./model/guardarpublicacion.php" method="POST" enctype="multipart/form-data">
         <label for="tipo">Tipo de publicación:</label>
         <select name="tipo">
             <option value="4">Noticia</option>

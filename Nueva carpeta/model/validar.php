@@ -27,6 +27,8 @@ if(sizeof($resul) > 0){
     header("location: ../indexInterno.php?page=inicioInterno");
 }else{
    
-    echo "<p>login incorrecto</p>";
-    echo "<a href='../index?page=iniciarSesion'>Reintentar</a>";
+
+    header("Location: ../index.php?page=iniciarSesionFallido");
+    //echo "<p>login incorrecto</p>";
+    //echo "<a href='../index.php?page=iniciarSesion'>Reintentar</a>";
 }

@@ -15,7 +15,7 @@ $cuerpo= $_POST['cuerpo'];
 
 $imagen=$_FILES['imagen']['name'];
 $imagentmp=$_FILES['imagen']['tmp_name'];
-$ruta= '../images/' . $imagen;
+$ruta= './images/' . $imagen;
 move_uploaded_file($imagentmp,$ruta);
 
 if($rol == 1){
